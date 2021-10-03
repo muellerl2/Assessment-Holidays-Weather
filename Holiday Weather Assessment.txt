@@ -1,0 +1,25 @@
+﻿First, we initialize things. We take in a holiday.json file, scrape from 2021 (on the holidays website) and then go directly to merging them. We then convert the whole thing into objects. 
+
+
+We want to start out with a while loop, similar to the tournament user interface. While loop will only terminate with an “exit” command, i.e. when the input is 5.
+
+
+To Yihua-proof the code (code in edge cases!), we will make certain that this has a try and except statement. We then go on to each case separately. 
+
+
+If the input is 1, we call the add method. This just asks the user to input a name and a date. Again, we Yihua-proof the date. 
+
+
+If the input is 2, we call the remove method. This asks the user to input a name. It will call a delete method with a decorator, to satisfy the decorator part of the assignment. 
+
+
+If the input is 3, we call a save method. This in turn calls a separate save method, which will convert out of the datetime format from when we loaded the data (since json files can’t take datetime objects). It saves only the data we have so far, not anything from prior years.
+
+
+If the input is 4, we call a viewHolidays method. This method will query the user for a year. It can then load in new data based on the year, since this is a requirement. 
+
+
+If the input is 5, we exit the program. 
+
+
+Throughout all of these different methods, we use a holiday object. This object has a dunder __str__ to make printing easy.
