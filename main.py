@@ -8,6 +8,7 @@ from dataclasses import dataclass
 from bs4 import BeautifulSoup
 import requests
 
+API_KEY = 0
 # This is our decorator, which prints a delete message for whatever holiday we choose to delete in our
 # delete method
 def printDelete(decorated_func):
@@ -292,7 +293,7 @@ def mergeHolidays(holiday1, holiday2):
     return holiday2
 
 def queryAPI():
-    response = requests.get('https://api.tomorrow.io/v4/timelines?location=-90,45&fields=weatherCode&timesteps=1d&units=metric&apikey=8ikCjPV4TolYqlj9Ad805by2mxaDp2Wq')
+    response = requests.get('https://api.tomorrow.io/v4/timelines?location=-90,45&fields=weatherCode&timesteps=1d&units=metric&apikey=API_KEY')
     weatherDic = response.json()
     cutWeather = weatherDic['data']['timelines'][0]['intervals']
     listWeather = []
